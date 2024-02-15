@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Day1 {
     /**
      * Count the number of divisors of a positive integer n.
@@ -47,5 +49,25 @@ public class Day1 {
             ansArr[i] = ans;
         }
         return ansArr;
+    }
+
+    /**
+     * LeetCode LCR 012 寻找数组的中心下标
+     * @param nums
+     * @return
+     * @see <a href="https://leetcode.cn/problems/tvdfij/">LeetCode LCR 012 寻找数组的中心下标</a>
+     */
+    public int pivotIndex(int[] nums) {
+        int total = Arrays.stream(nums).sum();
+        int n = nums.length;
+        int sum = 0;
+
+        for (int i = 0; i < n; i++) {
+            if (2 * sum + nums[i] - total == 0) {
+                return i;
+            }
+            sum += nums[i];
+        }
+        return -1;
     }
 }
