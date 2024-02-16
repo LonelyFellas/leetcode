@@ -10,6 +10,9 @@ public class Main {
         Day1 day1 = new Day1();
 //        System.out.println(day1.minOperations("110"));
 //        System.out.println(day1.minOperations("001011"));
-        System.out.println(day1.pivotIndex(new int[]{1, 7, 3, 6, 5, 6}));
+//        System.out.println(day1.pivotIndex(new int[]{1, 7, 3, 6, 5, 6}));
+        System.out.println(day1.searchInsert(new int[]{1, 3, 5, 6}, 5));
+        System.out.println(day1.searchInsert(new int[]{1, 3, 5, 6}, 2));
+        System.out.println(day1.searchInsert(new int[]{1, 3, 5, 6}, 7));
     }
 }
