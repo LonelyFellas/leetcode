@@ -8,11 +8,7 @@ import java.io.IOException;
 public class Main {
     public static void main(String[] args) {
         Day1 day1 = new Day1();
-//        System.out.println(day1.minOperations("110"));
-//        System.out.println(day1.minOperations("001011"));
-//        System.out.println(day1.pivotIndex(new int[]{1, 7, 3, 6, 5, 6}));
-        System.out.println(day1.searchInsert(new int[]{1, 3, 5, 6}, 5));
-        System.out.println(day1.searchInsert(new int[]{1, 3, 5, 6}, 2));
-        System.out.println(day1.searchInsert(new int[]{1, 3, 5, 6}, 7));
+        var a = new int[][]{{2, 6},{1, 3},   {8, 10}, {15, 18}};
+        System.out.println(day1.merge(a));
     }
 }

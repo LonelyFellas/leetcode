@@ -1,4 +1,6 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Day1 {
     /**
@@ -53,6 +55,7 @@ public class Day1 {
 
     /**
      * LeetCode LCR 012 寻找数组的中心下标
+     *
      * @param nums
      * @return
      * @see <a href="https://leetcode.cn/problems/tvdfij/">LeetCode LCR 012 寻找数组的中心下标</a>
@@ -70,8 +73,10 @@ public class Day1 {
         }
         return -1;
     }
+
     /**
      * LeetCode 35 Search Insert Position
+     *
      * @param nums
      * @param target
      * @return
@@ -80,11 +85,11 @@ public class Day1 {
     public int searchInsert(int[] nums, int target) {
         int n = nums.length;
         int left = 0, right = n - 1;
-        while(left <= right) {
+        while (left <= right) {
             int mid = left + (right - left) / 2;
-            if(nums[mid] == target) {
+            if (nums[mid] == target) {
                 return mid;
-            } else if(nums[mid] < target) {
+            } else if (nums[mid] < target) {
                 if (mid == n - 1 || nums[mid + 1] > target) {
                     return mid + 1;
                 }
@@ -98,5 +103,36 @@ public class Day1 {
         }
 
         return -1;
+    }
+
+    /**
+     * LeetCode 56 Merge Intervals
+     * @param intervals
+     * @return
+     * @see <a href="https://leetcode.com/problems/merge-intervals/">LeetCode 56 Merge Intervals</a>
+     */
+    public int[][] merge(int[][] intervals) {
+        int n = intervals.length;
+
+        Arrays.sort(intervals, (lhs, rhs) -> lhs[0] - rhs[0]);
+        List<int[]> ans = new ArrayList<>();
+
+        int left = intervals[0][0];
+        int right = intervals[0][1];
+
+        for (int i = 1; i < n; i++) {
+            if (intervals[i][0] <= right) {
+                left = Math.min(left, intervals[i][0]);
+                right = Math.max(right, intervals[i][1]);
+            } else {
+                ans.add(new int[]{left, right});
+                left = intervals[i][0];
+                right = intervals[i][1];
+            }
+        }
+        ans.add(new int[]{left, right});
+
+
+       return ans.toArray(new int[ans.size()][]);
     }
 }
