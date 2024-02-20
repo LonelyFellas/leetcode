@@ -135,4 +135,26 @@ public class Day1 {
 
        return ans.toArray(new int[ans.size()][]);
     }
+    /**
+     * LeetCode 48 Rotate Image
+     * @param matrix
+     * @see <a href="https://leetcode.com/problems/rotate-image/">LeetCode 48 Rotate Image</a>
+     */
+    public void rotate(int[][] matrix) {
+        int c= matrix.length;
+        int r = matrix[0].length;
+        int[][] ans = new int[c][r];
+
+        for (int i = 0; i < c; i++) {
+            for (int j = 0; j < r; j++) {
+                ans[j][c - i - 1] = matrix[i][j];
+            }
+        }
+
+        for (int i = 0; i < c; i++) {
+            for (int j = 0; j < r; j++) {
+                matrix[i][j] = ans[i][j];
+            }
+        }
+    }
 }
