@@ -6,7 +6,7 @@ public class Day1 {
     /**
      * Count the number of divisors of a positive integer n.
      *
-     * @param n
+     * @param n the positive integer
      * @return the number of divisors of n
      */
     public int numberOfDivisor(int n) {
@@ -24,8 +24,8 @@ public class Day1 {
     /**
      * LeetCode 1769 Minimum Number of Operations to Move All Balls to Each Box
      *
-     * @param boxes
-     * @return
+     * @param boxes a string of '0' and '1'
+     * @return an array of integers
      * @see <a href="https://leetcode.com/problems/minimum-number-of-operations-to-move-all-balls-to-each-box/">LeetCode 1769 Minimum Number of Operations to Move All Balls to Each Box</a>
      */
     public int[] minOperations(String boxes) {
@@ -56,8 +56,8 @@ public class Day1 {
     /**
      * LeetCode LCR 012 寻找数组的中心下标
      *
-     * @param nums
-     * @return
+     * @param nums 数组
+     * @return 中心下标
      * @see <a href="https://leetcode.cn/problems/tvdfij/">LeetCode LCR 012 寻找数组的中心下标</a>
      */
     public int pivotIndex(int[] nums) {
@@ -77,9 +77,9 @@ public class Day1 {
     /**
      * LeetCode 35 Search Insert Position
      *
-     * @param nums
-     * @param target
-     * @return
+     * @param nums  有序数组
+     * @param target 目标值
+     * @return 目标值的索引
      * @see <a href="https://leetcode.com/problems/search-insert-position/">LeetCode 35 Search Insert Position</a>
      */
     public int searchInsert(int[] nums, int target) {
@@ -107,8 +107,8 @@ public class Day1 {
 
     /**
      * LeetCode 56 Merge Intervals
-     * @param intervals
-     * @return
+     * @param intervals 二维数组
+     * @return 合并后的二维数组
      * @see <a href="https://leetcode.com/problems/merge-intervals/">LeetCode 56 Merge Intervals</a>
      */
     public int[][] merge(int[][] intervals) {
@@ -137,7 +137,7 @@ public class Day1 {
     }
     /**
      * LeetCode 48 Rotate Image
-     * @param matrix
+     * @param matrix 二维数组
      * @see <a href="https://leetcode.com/problems/rotate-image/">LeetCode 48 Rotate Image</a>
      */
     public void rotate(int[][] matrix) {
@@ -159,7 +159,7 @@ public class Day1 {
     }
     /**
      * LeetCode 73 Set Matrix Zeroes
-     * @param matrix
+     * @param matrix 二维数组
      * @see <a href="https://leetcode.com/problems/set-matrix-zeroes/">LeetCode 73 Set Matrix Zeroes</a>
      */
     public void setZeroes(int[][] matrix) {
