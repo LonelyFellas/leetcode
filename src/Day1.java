@@ -157,4 +157,33 @@ public class Day1 {
             }
         }
     }
+    /**
+     * LeetCode 73 Set Matrix Zeroes
+     * @param matrix
+     * @see <a href="https://leetcode.com/problems/set-matrix-zeroes/">LeetCode 73 Set Matrix Zeroes</a>
+     */
+    public void setZeroes(int[][] matrix) {
+         int c = matrix.length;
+         int r = matrix[0].length;
+         boolean[][] mark = new boolean[c][r];
+         for (int i = 0; i < c; i++) {
+             for (int j = 0; j < r; j++) {
+                 if (matrix[i][j] == 0) {
+                     for (int k = 0; k < c; k++) {
+                         mark[k][j] = true;
+                     }
+                     for (int k = 0; k < r; k++) {
+                        mark[i][k] = true;
+                     }
+                 }
+             }
+         }
+         for (int i = 0; i < c; i++) {
+             for (int j = 0; j < r; j++) {
+                 if (mark[i][j]) {
+                     matrix[i][j] = 0;
+                 }
+             }
+         }
+    }
 }
