@@ -186,4 +186,45 @@ public class Day1 {
              }
          }
     }
+    /**
+     * LeetCode 498 Diagonal Traverse
+     * @param matrix 二维数组
+     * @return 一维数组
+     * @see <a href="https://leetcode.com/problems/diagonal-traverse/">LeetCode 498 Diagonal Traverse</a>
+     */
+    public int[] findDiagonalOrder(int[][] matrix) {
+        int yLen = matrix.length;
+        int xLen = matrix[0].length;
+        int sumLen = yLen + xLen;
+        int[] ans = new int[sumLen];
+
+        int r = 0; // row
+        int c = 0; // column
+        for (int i = 0; i < sumLen; i++) {
+            // 奇数
+            if (r % 2 == 1) {
+                ans[i] = matrix[c][r];
+                if (c == yLen) {
+                    c += 1;
+                } else {
+                    r -= 1;
+                    c += 1;
+                }
+            } else {
+                ans[i] = matrix[c][r];
+                if (r == 0) {
+                    if (c == 0) {
+                        r += 1;
+                    } else {
+                        c += 1;
+                    }
+                } else {
+                    c -= 1;
+                }
+
+            }
+        }
+
+        return ans;
+    }
 }
